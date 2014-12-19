@@ -1,0 +1,5 @@
+{
+  "directory": "bower_components",
+  "proxy":"http://svckhulaprod:khulaprod*@10.3.0.11:80/",
+  "https-proxy":"http://svckhulaprod:khulaprod*@10.3.0.11:80/"
+}

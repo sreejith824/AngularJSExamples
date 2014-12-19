@@ -1,0 +1,141 @@
+{
+  "agreement": {
+    "objectReference": {
+      "objectId": "",
+      "typeId": "",
+      "componentId": ""
+    },
+    "agreementAnchor": {
+      "objectReference": {
+        "objectId": "",
+        "typeId": "",
+        "componentId": ""
+      }
+    },
+    "startDate": "",
+    "endDate": "",
+    "originalStartDate": "",
+    "state": "",
+    "totalPremium": "",
+    "benefitPremium": "",
+    "coverAmount": "",
+    "premiumPayer": [
+      {
+        "objectReference": {
+          "objectId": "",
+          "typeId": "",
+          "componentId": ""
+        }
+      }
+    ],
+    "policyHolder": [
+      {
+        "objectId": "",
+        "typeId": "",
+        "componentId": ""
+      }
+    ],
+    "lifeAssured": [
+      {
+        "objectReference": {
+          "objectId": "",
+          "typeId": "",
+          "componentId": ""
+        }
+      }
+    ],
+    "beneficiaryOfProceeds": [],
+    "beneficiaryOfOwnership": [
+      {
+        "objectReference": {
+          "objectId": "",
+          "typeId": "",
+          "componentId": ""
+        }
+      },
+      {
+        "objectReference": {
+          "objectId": "",
+          "typeId": "",
+          "componentId": ""
+        }
+      }
+    ],
+    "aimMonth": "",
+    "term": "",
+    "marketingName": "",
+    "goalName": "",
+    "childAgreements": [
+      {
+        "agreement": {
+          "objectReference": {
+            "objectId": "",
+            "typeId": "",
+            "componentId": ""
+          },
+          "agreementAnchor": {
+            "objectReference": {
+              "objectId": "",
+              "typeId": "",
+              "componentId": ""
+            }
+          },
+          "startDate": "",
+          "endDate": "",
+          "originalStartDate": "",
+          "state": "",
+          "totalPremium": "",
+          "benefitPremium": "",
+          "coverAmount": "",
+          "premiumPayer": [
+            {
+              "objectReference": {
+                "objectId": "",
+                "typeId": "",
+                "componentId": ""
+              }
+            }
+          ],
+          "policyHolder": [
+            {
+              "objectId": "",
+              "typeId": "",
+              "componentId": ""
+            }
+          ],
+          "lifeAssured": [
+            {
+              "objectReference": {
+                "objectId": "",
+                "typeId": "",
+                "componentId": ""
+              }
+            }
+          ],
+          "beneficiaryOfProceeds": [],
+          "beneficiaryOfOwnership": [
+            {
+              "objectReference": {
+                "objectId": "",
+                "typeId": "",
+                "componentId": ""
+              }
+            },
+            {
+              "objectReference": {
+                "objectId": "",
+                "typeId": "",
+                "componentId": ""
+              }
+            }
+          ],
+          "aimMonth": "",
+          "term": "",
+          "marketingName": "",
+          "goalName": "",
+          "childAgreements": []
+        }
+      }
+    ]
+  }
+}
