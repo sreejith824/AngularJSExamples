@@ -9,23 +9,15 @@
    *
    * Main module of the application.
    */
-  angular.module('maintainClient.app', ['LocalStorageModule','ui.grid'])
-    .config(localStorageConfig)
-    .config(routeProvider);
+  angular.module('maintainClient.app',
+    ['maintainClient.controller'])
+    .config(routeProviderConfig) ;
 
-  function routeProvider($routeProvider) {
+  function routeProviderConfig($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'features/maintainClient/maintainClient.html',
         controller: 'MaintainClientController'
       })
-  }
-  localStorageConfig.$inject = ['localStorageServiceProvider'];
-
-   function localStorageConfig(localStorageServiceProvider) {
-     localStorageServiceProvider
-       .setPrefix("maintainClient.app")
-       .setStorageType("localStorage")
-       .setNotify("true","true");
   }
 })();
