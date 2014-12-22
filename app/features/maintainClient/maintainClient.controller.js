@@ -9,11 +9,10 @@
    * Controller of the maintainClient
    */
   angular.module('maintainClient.controller',
-                ['maintainClient.service','ui.grid'])
-                .controller('MaintainClientController', maintainClientController);
+    ['maintainClient.service', 'ui.grid'])
+    .controller('MaintainClientController', maintainClientController);
 
   maintainClientController.$inject = ['maintainClientService'];
-
   function maintainClientController(maintainClientService) {
     this.search = searchPerson;
     this.addPerson = addPerson;
@@ -38,7 +37,8 @@
         {field: 'IDNumber', displayName: 'ID Number', minWidth: 400, width: '65%'}
       ]
     };
-    refeshPersonGrid();
+    //refeshPersonGrid();
+    getPersonListFromIndexedDB();
 
     function searchPerson() {
       this.clientInfo.firstName = "TEST";
@@ -46,24 +46,27 @@
     }
 
     function addPerson(clientInfo) {
-      maintainClientService.addPersonToLocalStorage(clientInfo);
-      //maintainClientService.addPersonToIndexedDB(clientInfo);
-      refeshPersonGrid();
+      //maintainClientService.addPersonToLocalStorage(clientInfo);
+      maintainClientService.addPersonToIndexedDB(clientInfo).then(function() {
+        console.log("inside callback. About to call getPersonListFromIndexedDB");
+      });
+      getPersonListFromIndexedDB();
+      //refeshPersonGrid();
     }
+
     function refeshPersonGrid() {
       vm.gridData = maintainClientService.getPersonFromLocalStorage();
       vm.gridOptions = {data: vm.gridData};
     }
 
-/*
-    function refeshPersonGrid() {
-      maintainClientService.getPersonFromIndexedDB().then(function(PERSON_LIST) {
-        console.log(PERSON_LIST);
-      });
-
-      vm.gridOptions = {data: vm.gridData};
+    function getPersonListFromIndexedDB() {
+      maintainClientService.getPersonFromIndexedDB().then(function (data) {
+        vm.gridData = data;
+        console.log(vm.gridData.length)
+        vm.gridOptions = {data: vm.gridData};
+        console.log("inside getPersonListFromIndexedDB");
+      })
     }
-*/
-  }
 
+  }
 })();

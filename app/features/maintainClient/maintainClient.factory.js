@@ -9,20 +9,16 @@
    * Factory in the maintainClient.
    */
   angular.module('maintainClient.service',
-    ['LocalStorageModule', 'ngResource', 'xc.indexedDB'])
+    ['LocalStorageModule', 'xc.indexedDB', 'ngResource'])
     .config(localStorageConfig)
     .config(indexedDBProviderConfig)
     .factory('maintainClientService', maintainClientService);
 
-  maintainClientService.$inject = ['localStorageService', '$indexedDB'];
+  maintainClientService.$inject = ['localStorageService', '$indexedDB', '$q', '$resource'];
 
-  function maintainClientService($localStorageService, $indexedDB) {
-
-    this.OBJECT_STORE_NAME = "Client";
-    this.CLIENT_OBJECT_STORE = $indexedDB.objectStore(this.OBJECT_STORE_NAME);
-    this.PERSON_LIST = [];
-
-    var vm = this;
+  function maintainClientService($localStorageService, $indexedDB, $q, $resource) {
+    this.indexedPersonData = [];
+    var self = this;
     return {
       addPersonToLocalStorage: addPersonToLocalStorage,
       addPersonToIndexedDB: addPersonToIndexedDB,
@@ -37,9 +33,11 @@
     }
 
     function addPersonToIndexedDB(clientInfo) {
+      var deferred = $q.defer();
+      var clientObjectStore = $indexedDB.objectStore("Client");
       clientInfo.status = "Added";
-      vm.CLIENT_OBJECT_STORE.insert(clientInfo).then(function () {
-        console.log("Saved To IndexedDB");
+      return clientObjectStore.insert(clientInfo).then(function () {
+          console.log("Saved To IndexedDB");
       });
     }
 
@@ -54,15 +52,12 @@
     }
 
     function getPersonFromIndexedDB() {
-
-      vm.CLIENT_OBJECT_STORE.getAll().$promise.then(function (results) {
-        console.log(results);
+      var clientObjectStore = $indexedDB.objectStore("Client");
+      return clientObjectStore.getAll().then(function (results) {
         return results;
       });
-    }
+    };
   }
-
-  localStorageConfig.$inject = ['localStorageServiceProvider'];
 
   function localStorageConfig(localStorageServiceProvider) {
     localStorageServiceProvider
@@ -77,7 +72,5 @@
         var objeStore = db.createObjectStore("Client", {keyPath: "IDNumber"});
         objeStore.createIndex("name_idx", "firstName");
       });
-
   }
-
 })();
