@@ -8,36 +8,38 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
+
+
 <body ng-app="angularjsExamplesApp">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!-- Add your site or application content here -->
-<div class="container">
-  <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <!--<li class="active"><a ng-href="#">Home</a></li>-->
-      <!--<li><a ng-href="#/about">About</a></li>-->
-      <!--<li><a ng-href="#">Contact</a></li>-->
-    </ul>
-    <h3 class="text-muted">AngularJS Examples </h3>
+<!-- NAVIGATION -->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
   </div>
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="maintainClient">Client</a></li>
+    <li><a ui-sref="vehicle">Vehicle</a></li>
+  </ul>
+</nav>
 
-  <div ng-view=""></div>
+<div ui-view></div>
 
-  <div class="footer">
-    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-  </div>
+<div class="footer">
+  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
 </div>
+
 
 <!-- build:js(.) scripts/oldieshim.js -->
 <!--[if lt IE 9]>
@@ -61,6 +63,7 @@
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="bower_components/angularjs-indexedDB/src/indexeddb.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -74,5 +77,7 @@
 <script src="features/maintainClient/maintainClient.factory.js?bust=1418645159081"></script>
 
 <!-- endbuild -->
+
+
 </body>
 </html>

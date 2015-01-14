@@ -10,8 +10,8 @@
    * Main module of the application.
    */
   angular.module('maintainClient.app',
-    ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid'])
-    .config(routeProviderConfig) ;
+    ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid']);
+   /* .config(routeProviderConfig) ;
 
   function routeProviderConfig($routeProvider) {
     $routeProvider
@@ -19,5 +19,5 @@
         templateUrl: 'features/maintainClient/maintainClient.html',
         controller: 'MaintainClientController'
       })
-  }
+  }*/
 })();
