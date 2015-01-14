@@ -10,7 +10,7 @@
    * Main module of the application.
    */
   angular.module('maintainClient.app',
-    ['maintainClient.controller'])
+    ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid'])
     .config(routeProviderConfig) ;
 
   function routeProviderConfig($routeProvider) {

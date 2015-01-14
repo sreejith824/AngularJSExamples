@@ -8,15 +8,14 @@
    * # maintainClientService
    * Factory in the maintainClient.
    */
-  angular.module('maintainClient.service',
-    ['LocalStorageModule', 'xc.indexedDB', 'ngResource'])
+  angular.module('maintainClient.app')
     .config(localStorageConfig)
     .config(indexedDBProviderConfig)
-    .factory('maintainClientService', maintainClientService);
+    .factory('MaintainClientService', MaintainClientService);
 
-  maintainClientService.$inject = ['localStorageService', '$indexedDB', '$q', '$resource'];
+  MaintainClientService.$inject = ['localStorageService', '$indexedDB'];
 
-  function maintainClientService($localStorageService, $indexedDB, $q, $resource) {
+  function MaintainClientService($localStorageService, $indexedDB) {
     this.indexedPersonData = [];
     var self = this;
     return {
@@ -33,7 +32,6 @@
     }
 
     function addPersonToIndexedDB(clientInfo) {
-      var deferred = $q.defer();
       var clientObjectStore = $indexedDB.objectStore("Client");
       clientInfo.status = "Added";
       return clientObjectStore.insert(clientInfo).then(function () {

@@ -53,6 +53,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/maintainStudent.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/maintainStudent.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/index.html">
           <value>
             <set />
@@ -118,7 +128,97 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/PersonStructure_Draft.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/common/services/agreement.service.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/common/services/indexedDB.service.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/common/services/policyAcquisition.services.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/common/services/tabSelection.servce.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/clientsearch/maintainClient.app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/client.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/controllers/client.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/controllers/msppolicy.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/controllers/productchoice.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/controllers/quotation.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/msppolicy.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/productchoice.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/quotation.app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/quotationc.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/quotationt.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/services/agreement.factory.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/services/client.factory.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/services/quotation.factory.js">
           <value>
             <set />
           </value>
@@ -129,6 +229,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/init/app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/bower.json">
           <value>
             <set />
           </value>
