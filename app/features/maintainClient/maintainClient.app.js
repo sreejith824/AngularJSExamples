@@ -11,13 +11,4 @@
    */
   angular.module('maintainClient.app',
     ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid']);
-   /* .config(routeProviderConfig) ;
-
-  function routeProviderConfig($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'features/maintainClient/maintainClient.html',
-        controller: 'MaintainClientController'
-      })
-  }*/
 })();

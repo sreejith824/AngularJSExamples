@@ -73,6 +73,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainVehicle/car.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainVehicle/hyundai.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/features/maintainVehicle/vehicle.html">
           <value>
             <set />
@@ -199,6 +209,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/msppolicy.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/client.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/quotation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/quotationPreview.html">
           <value>
             <set />
           </value>

@@ -1,5 +1,5 @@
 <div class="row marketing">
-
+  <div ui-view></div>
 
   <div ng-app="maintainClient.app">
     <div ng-controller="MaintainClientController as maintainClientController">
@@ -12,6 +12,5 @@
       </button>
       <div id="grid1" ui-grid="maintainClientController.gridOptions" ui-grid-selection class="grid"></div>
     </div>
-    <div ui-view></div>
   </div>
 </div>

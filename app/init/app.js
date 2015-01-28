@@ -29,5 +29,9 @@
         url: "/vehicle",
         templateUrl: "features/maintainVehicle/vehicle.html"
       })
+      .state('vehicle.car', {
+        url: "/car",
+        templateUrl: "features/maintainVehicle/car.html"
+      })
   }
 })();
