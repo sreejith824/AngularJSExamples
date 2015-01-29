@@ -43,6 +43,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/hyundai.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/features/maintainClient/maintainClient.app.js">
           <value>
             <set />
@@ -74,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/features/maintainVehicle/car.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainVehicle/hyundai.controller.js">
           <value>
             <set />
           </value>
@@ -218,7 +228,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/mfppolicy.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/quotation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/newbusiness-quotations/partials/quotationNav.html">
           <value>
             <set />
           </value>

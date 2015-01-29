@@ -61,7 +61,7 @@
     function getPersonListFromIndexedDB() {
       maintainClientService.getPersonFromIndexedDB().then(function (data) {
         vm.gridData = data;
-        console.log(vm.gridData.length)
+        console.log(vm.gridData.length);
         vm.gridOptions = {data: vm.gridData};
         console.log("inside getPersonListFromIndexedDB");
       })
