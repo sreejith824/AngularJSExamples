@@ -10,8 +10,8 @@
    * Main module of the application.
    */
   angular.module('angularjsExamplesApp', [
-    'ui.router'
-    //'maintainClient.app'
+    'ui.router',
+    'maintainClient.app'
   ])
     .config(routeProviderConfig);
 
