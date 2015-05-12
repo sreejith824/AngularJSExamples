@@ -15,15 +15,13 @@
   ])
     .config(routeProviderConfig);
 
-  function routeProviderConfig($stateProvider, $urlRouterProvider) {
-
-    //$urlRouterProvider.otherwise("/maintainClient");
-
+  function routeProviderConfig($stateProvider, $httpProvider) {
     $stateProvider
       .state('maintainClient', {
-        url: "/maintainClient",
+        url: "/clientManagement",
         //template : '<div><h> eee</h></div>'
-        templateUrl: "features/maintainClient/maintainClient.html"
+        //templateUrl: "features/maintainClient/maintainClient.html",
+        templateUrl: "features/maintainClient/clientManagement.html"
       })
       .state('vehicle', {
         url: "/vehicle",
@@ -43,11 +41,11 @@
         url: "/hyundai",
         templateUrl: "features/maintainVehicle/hyundai.html",
         controller: "hyundaiController as ctrl",
-        resolve : {
+        resolve: {
           hyundaiName: function () {
             return {value: 'my hyundai'};
           }
         }
-      })
+      });
   }
 })();

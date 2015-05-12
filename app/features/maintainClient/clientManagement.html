@@ -1,0 +1,12 @@
+<div class="row marketing">
+  <div ui-view></div>
+
+    <div ng-controller="ClientManagementController as clientManagementController ">
+
+      <input type="text" ng-model="clientManagementController.clientInfo.resourceId" placeholder="Resource id">
+      <button name="addPerson" ng-click="clientManagementController.getPerson()">Add
+        Client
+      </button>
+      <pre> form  = {{clientManagementController.clientDetails}}</pre>
+  </div>
+</div>

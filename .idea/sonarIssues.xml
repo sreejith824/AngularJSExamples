@@ -38,6 +38,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/clientManagement.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/clientManagement.factory.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/features/maintainClient/clientManagement.html">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/features/maintainClient/home.html">
           <value>
             <set />
@@ -128,6 +143,61 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/Gruntfile.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/common/controllers/screenNavigation.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/common/partials/navScreen.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/common/partials/navmenubar.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/controllers/contactInformation.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/controllers/msppolicy.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/partials/bank.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/partials/contactInformation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/partials/quotation.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/partials/replacement.html">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Khula3/khula/khula-frontend-angularjs/app/features/newbusinessQuotation/quotation.app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../rit-training/angularjs-training/.bowerrc">
           <value>
             <set />
@@ -189,6 +259,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/clientsearch/maintainClient.app.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/home/controllers/home.controller.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/app/features/login/services/login.service.js">
           <value>
             <set />
           </value>
@@ -294,6 +374,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/bower.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../rit-training/khula-frontend-angularjs/test/karma.conf.js">
           <value>
             <set />
           </value>
