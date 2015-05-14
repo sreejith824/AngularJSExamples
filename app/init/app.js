@@ -19,8 +19,6 @@
     $stateProvider
       .state('maintainClient', {
         url: "/clientManagement",
-        //template : '<div><h> eee</h></div>'
-        //templateUrl: "features/maintainClient/maintainClient.html",
         templateUrl: "features/maintainClient/clientManagement.html"
       })
       .state('vehicle', {

@@ -10,5 +10,10 @@
    * Main module of the application.
    */
   angular.module('maintainClient.app',
-    ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid']);
+    ['LocalStorageModule', 'xc.indexedDB', 'ngResource','ui.grid'])
+  .config(routeProviderConfig);
+
+  function routeProviderConfig($httpProvider, $stateProvider) {
+    $httpProvider.interceptors.push('RESTInterceptor');
+  }
 })();
