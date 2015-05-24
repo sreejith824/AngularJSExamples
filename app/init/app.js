@@ -45,5 +45,8 @@
           }
         }
       });
+    $httpProvider.interceptors.push('RESTInterceptor');
   }
+
+
 })();
