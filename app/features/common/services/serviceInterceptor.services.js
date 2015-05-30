@@ -18,25 +18,16 @@
       service.request = function (config) {
         var stateService = $injector.get('$state');
         console.log(stateService.$current);
-        addWASHeaders(config);
+        //addWASHeaders(config);
         console.log("Inside RESTInterceptor : request !!!");
         return config;
       };
 
-
-
-
-
-
-
-
       function addWASHeaders(config) {
         var authdata = Base64Provider().encode('ahofstee' + ':' + 'password');
         var securityToken = 'Basic ' + authdata;
-
         config.headers['Authorization'] = securityToken;
         config.headers['business-process-id'] = '1200';
-        config.headers['Content-Type'] = 'application/json';
       }
 
       function Base64Provider() {
