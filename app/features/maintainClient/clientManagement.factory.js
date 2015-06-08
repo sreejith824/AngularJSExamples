@@ -37,9 +37,28 @@
         });
     }
 
-    function helloClient(param) {
+    function helloClient1(param) {
       var postData  = {'name' : param};
       var endpointURL = "http://localhost:9083/HelloWorldMessageListeningMediationWeb/HelloWorldMessageListeningHttpExport/readMesasge";
+      var req = {
+        method: 'POST',
+        url: endpointURL,
+        data : postData
+
+      };
+      return $http(req)
+        .success(function (response, status) {
+          console.log("returned from get client");
+          console.log(response);
+          return response;
+        })
+        .error(function (error) {
+          return error;
+        });
+    }
+    function helloClient(param) {
+      var postData  = {"applicationContext":{"businessProcessId":"11","businessTransactionId":"11","id":"11"},"username":"0083810","mobileNumber":"0783029052","idNumber":"6803235074086"};
+      var endpointURL = "http://localhost:9083/ForgotPasswordProcessWeb/ForgotPasswordHTTPExport/forgotPassword";
       var req = {
         method: 'POST',
         url: endpointURL,

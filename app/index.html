@@ -29,6 +29,7 @@
     <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
   </div>
   <ul class="nav navbar-nav">
+    <li><a ui-sref="login" id="login">Log in</a></li>
     <li><a ui-sref="maintainClient" id="button-home">About Client</a></li>
     <li><a ui-sref="vehicle">Vehicle</a></li>
     <li><a ui-sref="vehicle.car">Car</a></li>
@@ -66,6 +67,11 @@
 <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="bower_components/angularjs-indexedDB/src/indexeddb.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/pouchdb/dist/pouchdb.js"></script>
+<script src="bower_components/crypto-pouch/bundle.js"></script>
+<script src="bower_components/pouchdb-authentication/dist/pouchdb.authentication.js"></script>
+<script src="bower_components/transform-pouch/dist/pouchdb.transform-pouch.js"></script>
+<script src="bower_components/sjcl/sjcl.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -74,15 +80,26 @@
 <!-- 2. copy from index.html.gen  -->
 <!-- 3. move init/app.js to first -->
 <script src="init/app.js?bust=1418645159081"></script>
+<!-- maintainClient -->
 <script src="features/maintainClient/maintainClient.app.js?bust=1418645159081"></script>
 <script src="features/maintainClient/maintainClient.controller.js?bust=1418645159081"></script>
 <script src="features/maintainClient/maintainClient.factory.js?bust=1418645159081"></script>
 <script src="features/maintainClient/maintainClient.factory.js?bust=1418645159081"></script>
-<script src="features/maintainVehicle/hyundai.controller.js?bust=1418645159081"></script>
 <script src="features/maintainClient/clientManagement.controller.js?bust=1418645159081"></script>
 <script src="features/maintainClient/clientManagement.factory.js?bust=1418645159081"></script>
+
+<!-- maintainVehicle -->
+<script src="features/maintainVehicle/hyundai.controller.js?bust=1418645159081"></script>
+
+<!-- Login-->
+<script src="features/login/login.app.js?bust=1418645159081"></script>
+<script src="features/login/login.controller.js?bust=1418645159081"></script>
+<script src="features/login/login.factory.js?bust=1418645159081"></script>
+
+<!-- Common-->
 <script src="features/common/services/stateProvider.factory.js?bust=1418645159081"></script>
 <script src="features/common/services/serviceInterceptor.services.js?bust=1418645159081"></script>
+<script src="features/common/services/pouchdb.service.js?bust=1418645159081"></script>
 
 <!-- endbuild -->
 

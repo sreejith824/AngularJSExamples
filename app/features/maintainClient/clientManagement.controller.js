@@ -11,8 +11,8 @@
   angular.module('maintainClient.app')
     .controller('ClientManagementController', ClientManagementController);
 
-  ClientManagementController.$inject = ['ClientManagementService'];
-  function ClientManagementController(ClientManagementService) {
+  ClientManagementController.$inject = ['ClientManagementService', 'PouchDBService'];
+  function ClientManagementController(ClientManagementService, PouchDBService) {
     var vm = this;
     vm.getPerson = getPerson;
     vm.helloPerson = helloPerson;
@@ -29,12 +29,15 @@
 
     function helloPerson() {
       console.log("inside getPerson");
-      ClientManagementService.helloClient(vm.clientInfo.resourceId).then(function (data) {
-        console.log("inside ClientManagementController Callback");
-        vm.clientDetails = data.data;
-      })
-    }
 
+      PouchDBService.initializePouchDBAuthentication();
+      //PouchDBService.createClient();
+
+      /*ClientManagementService.helloClient(vm.clientInfo.resourceId).then(function (data) {
+       console.log("inside ClientManagementController Callback");
+       vm.clientDetails = data.data;
+       })*/
+    }
 
 
   }

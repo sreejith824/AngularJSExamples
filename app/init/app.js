@@ -11,7 +11,9 @@
    */
   angular.module('angularjsExamplesApp', [
     'ui.router',
-    'maintainClient.app'
+    'maintainClient.app',
+    'pouchdb.service',
+    'login.app'
   ])
     .config(routeProviderConfig);
 
@@ -44,6 +46,11 @@
             return {value: 'my hyundai'};
           }
         }
+      })
+      .state('login', {
+        url: "/login",
+        templateUrl: "features/login/login.html",
+        controller: "LoginController as controller"
       });
     $httpProvider.interceptors.push('RESTInterceptor');
   }
