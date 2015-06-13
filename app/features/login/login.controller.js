@@ -14,17 +14,17 @@
   LoginController.$inject = ['LoginService'];
   function LoginController(LoginService) {
     var vm = this;
-    vm.loginUser = loginUser;
+    vm.createData = createData;
     vm.getData = getData;
-    vm.username = null;
-    vm.password = null;
+    vm.name = null;
+    vm.surname = null;
     vm.message = null;
     vm.allData = null;
 
-    function loginUser() {
-      LoginService.loginUser(vm.username, vm.password).then(function (response) {
+    function createData() {
+      LoginService.createDoc(vm.name, vm.surname).then(function (response) {
         if (response === true) {
-          vm.message = "Welcome " + vm.username + "!!!!";
+          vm.message = "Welcome " + vm.name + "!!!!";
 
         }
       }).catch(function(error) {
@@ -33,7 +33,7 @@
     }
 
     function getData() {
-      LoginService.getAllDocs(vm.username, vm.password).then(function (response) {
+      LoginService.getAllDocs(vm.name, vm.surname).then(function (response) {
           vm.allData = response;
       }).catch(function(error) {
         vm.message = error;

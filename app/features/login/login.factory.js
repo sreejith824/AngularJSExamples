@@ -17,7 +17,7 @@
     var self = this;
 
     return {
-      loginUser: loginUser,
+      createDoc: createDoc,
       getAllDocs :  getAllDocs
     };
 
@@ -31,9 +31,9 @@
     }
      return defer.promise;
    }*/
-    function loginUser(username, password) {
+    function createDoc(username, password) {
       var defer = $q.defer();
-        PouchDBService.createUserDoc(username, password).then(function (response) {
+        PouchDBService.createUserDoc(username).then(function (response) {
           var isValidUser = true;
           defer.resolve(isValidUser);
         });
@@ -44,8 +44,10 @@
     function getAllDocs(username,password) {
       var defer = $q.defer();
       PouchDBService.setCredentials(username,password);
-      PouchDBService.getAllDocs(username, password).then(function (response) {
+      PouchDBService.getAllDocs().then(function (response) {
         defer.resolve(response);
+      }).catch(function(error){
+        defer.resolve(error);
       });
 
       return defer.promise;
