@@ -13,7 +13,8 @@
     'ui.router',
     'maintainClient.app',
     'pouchdb.service',
-    'login.app'
+    'login.app',
+    'students.app'
   ])
     .config(routeProviderConfig);
 
@@ -51,7 +52,22 @@
         url: "/login",
         templateUrl: "features/login/login.html",
         controller: "LoginController as controller"
-      });
+      })
+      .state('students', {
+        url: "/students",
+        templateUrl: "features/students/students.html"
+      })
+      .state('students.login', {
+        url: "/studentslogin",
+        templateUrl: "features/students/studentslogin.html",
+        controller: "StudentLoginController as controller"
+      })
+      .state('students.connect', {
+        url: "/studentsconnect",
+        templateUrl: "features/students/studentsconnect.html",
+        controller: "StudentLoginController as controller"
+      })
+    ;
     $httpProvider.interceptors.push('RESTInterceptor');
   }
 
