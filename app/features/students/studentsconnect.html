@@ -1,0 +1,8 @@
+<div class="row marketing">
+  <div ui-view></div>
+    <div>
+      <input type="text" ng-model="controller.idnumber" >
+      <button name="getInfo" ng-click="controller.getInfo()">Get Info</button>
+      <pre> {{controller.getResult}}</pre>
+  </div>
+</div>
