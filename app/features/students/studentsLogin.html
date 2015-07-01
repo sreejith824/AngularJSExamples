@@ -1,0 +1,13 @@
+<div class="row marketing">
+  <div ui-view></div>
+    <div>
+      <input type="text" ng-model="controller.name" >
+      <input type="text" ng-model="controller.surname">
+      <button name="createdata" ng-click="controller.createData()">Create Data</button>
+      <button name="getdata" ng-click="controller.getData()">Get Data</button>
+      <pre>Created Message</pre>
+      <pre> {{controller.message}}</pre>
+      <pre>Saved Data</pre>
+      <pre> {{controller.allData}}</pre>
+  </div>
+</div>
