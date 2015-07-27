@@ -1,0 +1,16 @@
+<div class="row marketing">
+  <div ui-view></div>
+  <div>
+    <input type="text"  placeholder="Name" ng-model="controller.student.name" >
+    <input type="text" placeholder="Age" ng-model="controller.student.age" >
+    <button name="addStudent" ng-click="controller.addStudent()">Add Student</button>
+    <pre> {{controller.addStudentMessage}}</pre>
+  </div>
+
+
+    <div>
+      <input type="text" ng-model="controller.idnumber" >
+      <button name="getInfo" ng-click="controller.getInfo()">Get Info</button>
+      <pre> {{controller.getStudentMessage}}</pre>
+  </div>
+</div>

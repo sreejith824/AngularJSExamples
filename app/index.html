@@ -9,6 +9,8 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <link rel="stylesheet" href="bower_components/angucomplete-alt/angucomplete-alt.css" />
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -29,15 +31,15 @@
     <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
   </div>
   <ul class="nav navbar-nav">
-    <li><a ui-sref="login" id="login">Log in</a></li>
+<!--    <li><a ui-sref="login" id="login">Log in</a></li>
     <li><a ui-sref="maintainClient" id="button-home">About Client</a></li>
     <li><a ui-sref="vehicle">Vehicle</a></li>
     <li><a ui-sref="vehicle.car">Car</a></li>
     <li><a ui-sref="vehicle.car.hyundai">Hyundai</a></li>
     <li><a ui-sref="students">Students</a></li>
     <li><a ui-sref="students.login">Students Login</a></li>
-    <li><a ui-sref="students.connect">Students Connect</a></li>
-
+    <li><a ui-sref="students.connect">Students Connect</a></li>-->
+    <li><a ui-sref="security">Security POC</a></li>
   </ul>
 </nav>
 
@@ -57,7 +59,10 @@
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
 <script src="bower_components/angular-messages/angular-messages.js"></script>
@@ -66,16 +71,24 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 <script src="bower_components/angularjs-indexedDB/src/indexeddb.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-audio/app/angular.audio.js"></script>
+<script src="bower_components/angular-css/angular-css.js"></script>
 <script src="bower_components/pouchdb/dist/pouchdb.js"></script>
+<script src="bower_components/angucomplete-alt/angucomplete-alt.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js"></script>
+<script src="bower_components/humanize-duration/humanize-duration.js"></script>
+<script src="bower_components/angular-timer/dist/angular-timer.js"></script>
 <script src="bower_components/crypto-pouch/bundle.js"></script>
 <script src="bower_components/pouchdb-authentication/dist/pouchdb.authentication.js"></script>
 <script src="bower_components/transform-pouch/dist/pouchdb.transform-pouch.js"></script>
 <script src="bower_components/sjcl/sjcl.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -105,6 +118,10 @@
 <script src="features/students/studentslogin.controller.js?bust=1418645159081"></script>
 <script src="features/students/students.factory.js?bust=1418645159081"></script>
 
+<!--Security App-->
+<script src="features/security/security.app.js?bust=1418645159081"></script>
+<script src="features/security/security.controller.js?bust=1418645159081"></script>
+<script src="features/security/security.factory.js?bust=1418645159081"></script>
 
 <!-- Common-->
 <script src="features/common/services/stateProvider.factory.js?bust=1418645159081"></script>

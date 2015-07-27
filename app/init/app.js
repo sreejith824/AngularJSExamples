@@ -14,9 +14,21 @@
     'maintainClient.app',
     'pouchdb.service',
     'login.app',
-    'students.app'
+    'students.app',
+    'security.app'
   ])
-    .config(routeProviderConfig);
+    .config(routeProviderConfig)
+    .run(['$rootScope', '$state', function ($rootScope, $state) {
+
+      $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+        if (toState.name === 'security') {
+          event.preventDefault();
+          $state.go('security.login');
+
+        }
+      });
+
+    }]);
 
   function routeProviderConfig($stateProvider, $httpProvider) {
     $stateProvider
@@ -66,6 +78,20 @@
         url: "/studentsconnect",
         templateUrl: "features/students/studentsconnect.html",
         controller: "StudentLoginController as controller"
+      })
+      .state('security', {
+        url: "/security",
+        templateUrl: "features/security/security.html"
+      })
+      .state('security.login', {
+        url: "/securitylogin",
+        templateUrl: "features/security/securitylogin.html",
+        controller: "SecurityController as controller"
+      })
+      .state('security.studentinfo', {
+        url: "/securitystudentinfo",
+        templateUrl: "features/security/securitystudentinfo.html",
+        controller: "SecurityController as controller"
       })
     ;
     $httpProvider.interceptors.push('RESTInterceptor');

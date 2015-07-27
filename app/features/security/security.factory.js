@@ -8,33 +8,40 @@
    * # maintainClientService
    * Factory in the maintainClient.
    */
-  angular.module('students.app')
-    .factory('StudentsService', StudentsService);
+  angular.module('security.app')
+    .factory('SecurityService', SecurityService);
 
-  StudentsService.$inject = ['$q', '$http', '$cookies'];
+  SecurityService.$inject = ['$q', '$http', '$cookies'];
 
-  function StudentsService($q, $http, $cookies) {
+  function SecurityService($q, $http, $cookies) {
     var self = this;
 
     return {
       login: login,
-      getInfo : getInfo
+      getInfo: getInfo,
+      addStudentInfo : addStudentInfo
     };
 
 
     function login(username, password) {
 
       var defer = $q.defer();
-      var data = {username : username, password : password};
-      var loginCredential = Base64Provider().encode(username + ':' + password);
-      var url = "http://localhost:9080/LoginManagerWeb/MyRest-rest/login";
-      var headers = {'Authorization' : 'Basic ' + loginCredential,
-      'Content-Type' : 'application/json'};
-      $http.post(url, data,{withCredentials : true, headers: headers}).success(function (response, status,headers, config) {
-        console.log($cookies['LtpaToken2']);
-        defer.resolve(response);
-      }).error(function (data, status, headers, config) {
-        defer.resolve(result);
+      var data = {};
+      var loginCredential = _Base64Provider().encode(username + ':' + password);
+      var url = "https://dev.local.net/StudentWeb/MyRest-rest/login/loginUser";
+      var headers = {
+        'Authorization': 'Basic ' + loginCredential,
+        'Content-Type': 'application/json'
+      };
+      $http.post(url, data, {
+        withCredentials: true,
+        headers: headers
+      }).success(function (response, status, headers, config) {
+        console.log(response);
+        defer.resolve(status);
+      }).error(function (error, status, headers, config) {
+        console.log(error);
+        defer.resolve(status);
       });
 
       return defer.promise;
@@ -43,9 +50,11 @@
     function getInfo(idnumber) {
 
       var defer = $q.defer();
-      var url = "http://dev.local.net/StudentWeb/MyRest-rest/services/students/" + idnumber;
-
-      $http.get(url,{withCredentials : true, headers: headers}).success(function (response, status,headers, config) {
+      var url = "https://dev.local.net/StudentWeb/MyRest-rest/services/students/" + idnumber;
+      var headers = {
+        'Content-Type': 'application/json'
+      };
+      $http.get(url, {withCredentials: true, headers: headers}).success(function (response, status, headers, config) {
         defer.resolve(response);
       }).error(function (error, status, headers, config) {
         defer.resolve(error);
@@ -53,7 +62,26 @@
 
       return defer.promise;
     }
-    function Base64Provider() {
+
+    function addStudentInfo(student) {
+
+      var defer = $q.defer();
+      var url = "https://dev.local.net/StudentWeb/MyRest-rest/services/students";
+      var headers = {
+        'Content-Type': 'application/json'
+      };
+
+      $http.post(url, student, {withCredentials: true, headers: headers}).success(function (response, status, headers, config) {
+        var location = headers().location;
+        defer.resolve(location);
+      }).error(function (error, status, headers, config) {
+        defer.resolve(error);
+      });
+
+      return defer.promise;
+    }
+
+    function _Base64Provider() {
       /* jshint ignore:start */
 
       var keyStr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -138,5 +166,5 @@
 
     }
   }
-}) ();
+})();
 

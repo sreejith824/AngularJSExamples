@@ -40,14 +40,14 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/features/{,*/}*.*'],
+        files: ['<%= yeoman.app %>/**/**/**/*.*'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
-        files: ['test/unit/{,*/}*.js'],
+        files: ['test/unit/**/*.js', 'test/midway/**/*.js', 'test/utilities/**/*.js', 'test/e2e/**/*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
@@ -57,12 +57,14 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/**/*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
@@ -80,6 +82,26 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           open: true,
+          middleware: function (connect) {
+            return [
+              connect.static('.tmp'),
+              connect().use(
+                '/bower_components',
+                connect.static('./bower_components')
+              ),
+              connect.static(appConfig.app)
+            ];
+          }
+        }
+      },
+      testserver: {
+        options: {
+          port: 9999
+        }
+      },
+      testintegration: {
+        options: {
+          open: false,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -132,7 +154,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/unit/{,*/}*.js']
+        src: ['test/unit/{,*/}*.js', 'test/midway/{,*/}*.js', 'test/utilities/{,*/}*.js']
       }
     },
 
@@ -170,17 +192,18 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       }
     },
+
 
     // Renames files for browser caching purposes
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/app/{,*/}*.js',
+          '<%= yeoman.dist %>/app/**/*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -210,35 +233,9 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
       }
     },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
     imagemin: {
       dist: {
@@ -313,8 +310,16 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
+            '**/*.html',
             'images/{,*/}*.{webp}',
-            'fonts/{,*/}*.*'
+            'mp3/*.mp3',
+            'data/*.json',
+            'fonts/{,*/}*.*',
+            '**/*.js',
+            '*.js',
+            '*.woff',
+            '**/*.woff',
+            'common/telephony/sounds/*.*'
           ]
         }, {
           expand: true,
@@ -326,6 +331,15 @@ module.exports = function (grunt) {
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: 'bower_components/angular-ui-grid',
+          src: [
+            '*.ttf',
+            '*.woff',
+            '*.svg'
+          ],
+          dest: '<%= yeoman.dist %>/styles'
         }]
       },
       styles: {
@@ -351,35 +365,89 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Test settings
+    //// Test settings
+    //karma: {
+    //  unit: {
+    //    configFile: 'test/karma.conf.js',
+    //    singleRun: true
+    //  }
+    //},
+
     karma: {
       unit: {
-        configFile: 'test/karma.conf.js',
+        configFile: './test/karma-unit.conf.js',
+        autoWatch: false,
         singleRun: true
+      },
+      unit_auto: {
+        configFile: './test/karma-unit.conf.js'
+      },
+      midway: {
+        configFile: './test/karma-midway.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
+      midway_auto: {
+        configFile: './test/karma-midway.conf.js'
+      },
+      e2e: {
+        configFile: './test/karma-e2e.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
+      e2e_auto: {
+        configFile: './test/karma-e2e.conf.js'
+      }
+    },
+
+    protractor: {
+      options: {
+        keepAlive: true,
+        configFile: 'test/protractor.conf.js'
+      },
+      run: {}
+    },
+
+    protractor_webdriver: {
+      target: {
+        options: {
+          //path: '/path/to/',
+          command: 'webdriver-manager start'
+        }
+      }
+    },
+
+    'bower-install-simple': {
+      options: {
+        color: true
+      },
+      prod: {
+        options: {
+          production: true
+        }
+      },
+      dev: {
+        options: {
+          production: false
+        }
+      }
+    },
+
+    execute: {
+      prepare_E2E_environment_LOCALHOST: {
+        options: {
+          args: ['LOCALHOST', 'e2e']
+        },
+        src: ['../khula-couchdb-manager/e2e_init.js']
       }
     }
   });
 
-  grunt.registerMultiTask('index', 'Create index.html.gen',
-    function() {
-      var files = grunt._watch_changed_files || grunt.file.expand(this.data);
-      var now = new Date().getTime();
-      var scripts_str = '';
-      var tpl = grunt.file.read('app/index.html.template');
+  grunt.loadNpmTasks('grunt-protractor-runner');
+  grunt.loadNpmTasks('grunt-protractor-webdriver');
+  grunt.loadNpmTasks('grunt-bower-install-simple');
 
-      files.forEach(function(file) {
-        file = file.replace(/^app\//, '');
-        scripts_str += '<script src="' + file + '?bust=' + now + '"></script>' + '\n';
-      });
-
-      grunt.file.write('app/index.html.gen', grunt.template.process(tpl, {
-        data: {
-          scripts: scripts_str
-        }
-      }));
-      console.log('File "index.html.gen" created.');
-    });
-
+  grunt.registerTask('bowerinstall', ['bower-install-simple']);
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -406,11 +474,40 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma:unit',
+    'karma:midway'
+  ]);
+
+  grunt.registerTask('test:unit', [
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('test:midway', [
+    'execute:prepare_E2E_environment_LOCALHOST',
+    'connect:testserver',
+    'karma:midway'
+  ]);
+
+  grunt.registerTask('test:e2e', [
+    'execute:prepare_E2E_environment_LOCALHOST',
+    'clean:server',
+    'wiredep',
+    'concurrent:server',
+    'autoprefixer',
+    'connect:testintegration',
+    'protractor_webdriver',
+    'protractor:run'
+  ]);
+
+  grunt.registerTask('test:all', [
+    'test:unit',
+    'test:midway',
+    'test:e2e'
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bowerinstall',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
@@ -426,9 +523,47 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+  grunt.registerTask('build-jenkins', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'ngAnnotate',
+    'copy:dist',
+    //'cdnify',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin',
+    'htmlmin'
+  ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
-    'build'
+    'build',
+    'test'
   ]);
+
+  grunt.registerTask('autotest', [
+    'autotest:unit'
+  ]);
+
+  grunt.registerTask('autotest:unit', [
+    'connect:testserver',
+    'karma:unit_auto'
+  ]);
+
+  grunt.registerTask('autotest:midway', [
+    'connect:testserver',
+    'karma:midway_auto'
+  ]);
+
+  grunt.registerTask('autotest:e2e', [
+    'connect:testserver',
+    'karma:e2e_auto'
+  ]);
+
+
 };
